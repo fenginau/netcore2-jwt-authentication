@@ -1,0 +1,11 @@
+D:\TestFiles\c#\AuthApi\AuthApi\bin\Release\netcoreapp2.0\AuthApi.deps.json
+D:\TestFiles\c#\AuthApi\AuthApi\bin\Release\netcoreapp2.0\AuthApi.runtimeconfig.json
+D:\TestFiles\c#\AuthApi\AuthApi\bin\Release\netcoreapp2.0\AuthApi.runtimeconfig.dev.json
+D:\TestFiles\c#\AuthApi\AuthApi\bin\Release\netcoreapp2.0\AuthApi.dll
+D:\TestFiles\c#\AuthApi\AuthApi\bin\Release\netcoreapp2.0\AuthApi.pdb
+D:\TestFiles\c#\AuthApi\AuthApi\obj\Release\netcoreapp2.0\AuthApi.csprojResolveAssemblyReference.cache
+D:\TestFiles\c#\AuthApi\AuthApi\obj\Release\netcoreapp2.0\AuthApi.csproj.CoreCompileInputs.cache
+D:\TestFiles\c#\AuthApi\AuthApi\obj\Release\netcoreapp2.0\AuthApi.AssemblyInfoInputs.cache
+D:\TestFiles\c#\AuthApi\AuthApi\obj\Release\netcoreapp2.0\AuthApi.AssemblyInfo.cs
+D:\TestFiles\c#\AuthApi\AuthApi\obj\Release\netcoreapp2.0\AuthApi.dll
+D:\TestFiles\c#\AuthApi\AuthApi\obj\Release\netcoreapp2.0\AuthApi.pdb

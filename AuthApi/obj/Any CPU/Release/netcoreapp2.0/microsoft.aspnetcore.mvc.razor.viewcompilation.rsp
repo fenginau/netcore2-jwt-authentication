@@ -1,0 +1,5 @@
+D:\TestFiles\c#\AuthApi\AuthApi
+--output-path=obj\Any CPU\Release\netcoreapp2.0\
+--application-name=AuthApi
+--content-root=D:\TestFiles\c#\AuthApi\AuthApi
+--file=
