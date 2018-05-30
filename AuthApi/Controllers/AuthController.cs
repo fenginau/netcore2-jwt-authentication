@@ -35,23 +35,26 @@ namespace AuthApi.Controllers
         {
             try
             {
-                if (Request.Headers.TryGetValue("Authorization", out var headerValue))
-                {
-                    var handler = new JwtSecurityTokenHandler();
-                    var tokenParts = headerValue.ToString().Split(' ');
-                    if (tokenParts.Length > 1)
-                    {
-                        var token = (JwtSecurityToken) handler.ReadToken(tokenParts[1]);
-                        if (token != null)
-                        {
-                            Logger.Info(token.Claims.First(claim => claim.Type == JwtRegisteredClaimNames.NameId).Value);
-                        }
-                    }
-                    else
-                    {
-                        Logger.Info("Invalid token: " + headerValue);
-                    }
-                }
+                // if (Request.Headers.TryGetValue("Authorization", out var headerValue))
+                // {
+                //     var handler = new JwtSecurityTokenHandler();
+                //     var tokenParts = headerValue.ToString().Split(' ');
+                //     if (tokenParts.Length > 1)
+                //     {
+                //         var token = (JwtSecurityToken) handler.ReadToken(tokenParts[1]);
+                //         if (token != null)
+                //         {
+                //             Logger.Info(token.Claims.First(claim => claim.Type == JwtRegisteredClaimNames.NameId).Value);
+                //         }
+                //     }
+                //     else
+                //     {
+                //         Logger.Info("Invalid token: " + headerValue);
+                //     }
+                // }
+                
+                var username = User.Claims.First(claim => claim.Type == ClaimTypes.NameIdentifier).Value;
+                Logger.Info(username);
             }
             catch (Exception e)
             {
