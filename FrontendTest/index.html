@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="./node_modules/crypto-js/core.js"></script>
+<script src="./node_modules/crypto-js/enc-base64.js"></script>
+<script src="./node_modules/crypto-js/sha256.js"></script>
+<script>
+$(document).ready(function(){
+    // $.ajaxSetup({
+    //     beforeSend: function(xhr) {
+    //         if (localStorage.getItem("token") !== null) {
+    //             xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("token"));                      
+    //         }
+    //     }
+    // });  
+    $('#login').click(function(){
+        var username = $('#username').val();
+        var pwd = $('#password').val();
+        var hash = CryptoJS.SHA256(pwd + username);
+        var pwdHash =  hash.toString(CryptoJS.enc.Base64)
+        console.log('1: p1dKQhmLfX7uLAN3A6C5VVjxlUV5CNaXXmgeIFX9Xrk=');
+        console.log('2: ' + pwdHash);
+
+        $.post('http://localhost/auth/api/auth/login?username=test&pwd=' + pwdHash,{},
+        function(data,status){
+            localStorage.setItem("token", data);
+            console.log(data);
+        });
+    });
+
+    $('#test').click(function() {
+        // $.ajax({
+        //     url: 'http://localhost/auth/api/auth/test2',
+        //     method: 'GET',
+        //     headers: {
+        //         "Authorization": 'Bearer ' + localStorage.getItem("token")
+        //     },
+        //     dataType: 'json',
+        //     success: function (data) {
+        //         alert(data);
+        //     }
+        // });
+        $.ajax({
+            url: "http://localhost/auth/api/auth/test2",
+            // data: { signature: authHeader },
+            type: "GET",
+            // beforeSend: function(xhr){xhr.setRequestHeader('Authorization', 'Bearer ' + localStorage.getItem("token"));},
+            success: function(data) { alert('Success!' + data); }
+        });
+        // $.get('http://localhost/auth/api/auth/test',{},
+        // function(data,status){
+        //     alert(data);
+        // });
+    });
+    $('#test2').click(function() {
+        $.get('http://localhost/auth/api/auth/test2',{},
+        function(data,status){
+            alert(data);
+        });
+    });
+});
+</script>
+</head>
+<body>
+<input type="text" id="username" value="test" />
+<input type="text" id="password" value="password" />
+<button id="login">login</button>
+<button id="test">test</button>
+<button id="test2">test2</button>
+</body>
+</html>
